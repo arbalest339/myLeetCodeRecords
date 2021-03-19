@@ -45,17 +45,17 @@ class Solution:
                     treeStack.append(cur_node.left)
             else:
                 inorder.append(treeStack.pop())
-        
+
         for i in range(len(inorder)):
             inorder[i].left = inorder[i-1]
-            inorder[i].right = inorder[(i+1)%len(inorder)]
-        
+            inorder[i].right = inorder[(i+1) % len(inorder)]
+
         return inorder[0]
 
 
 if __name__ == "__main__":
     solution = Solution()
-    preorder = [4,2,1,3,6,5,7]
-    inorder = [1,2,3,4,5,6,7]
+    preorder = [4, 2, 1, 3, 6, 5, 7]
+    inorder = [1, 2, 3, 4, 5, 6, 7]
     root = Node.buildTree(preorder, inorder)
     print(solution.treeToDoublyList(root))

@@ -13,7 +13,7 @@ class TreeNode:
         root = TreeNode(treeList[0])
         queue.append(root)
         i = 1
-        while i<len(treeList):
+        while i < len(treeList):
             cur = queue.popleft()
             if treeList[i]:
                 cur.left = TreeNode(treeList[i])
@@ -26,10 +26,10 @@ class TreeNode:
         return root
 
 
-
 class Solution:
     def isBalanced(self, root: TreeNode) -> bool:
         return self.depthBalance(root)[0]
+
     def depthBalance(self, root) -> int:
         if not root:
             return True, 0
@@ -41,13 +41,14 @@ class Solution:
             if not leftBal or not rightBal:
                 return False, 0
             else:
-                if not -2<leftDepth-rightDepth<2:
+                if not -2 < leftDepth-rightDepth < 2:
                     return False, 0
                 else:
-                    return True, max(leftDepth,rightDepth)+1
+                    return True, max(leftDepth, rightDepth)+1
+
 
 if __name__ == "__main__":
     solution = Solution()
-    treeList = [1,2,2,3,3,None,None,4,4]
+    treeList = [1, 2, 2, 3, 3, None, None, 4, 4]
     root = TreeNode.buildTree(treeList)
     solution.isBalanced(root)

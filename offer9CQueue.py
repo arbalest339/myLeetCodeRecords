@@ -4,12 +4,10 @@ class CQueue:   # 一个管进，倒出来管出
         self.appendStack = []
         self.deleteStack = []
 
-
     def appendTail(self, value: int) -> None:
         while self.deleteStack:
             self.appendStack.append(self.deleteStack.pop())
         self.appendStack.append(value)
-
 
     def deleteHead(self) -> int:
         while self.appendStack:

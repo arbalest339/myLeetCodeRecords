@@ -13,7 +13,7 @@ class TreeNode:
         root = TreeNode(treeList[0])
         queue.append(root)
         i = 1
-        while i<len(treeList):
+        while i < len(treeList):
             cur = queue.popleft()
             if treeList[i]:
                 cur.left = TreeNode(treeList[i])
@@ -24,7 +24,6 @@ class TreeNode:
                 queue.append(cur.right)
             i += 1
         return root
-
 
 
 class Solution:
@@ -43,14 +42,13 @@ class Solution:
                 stack.append(None)
                 if cur.left:
                     stack.append(cur.left)
-        
-        return res[-k]
 
+        return res[-k]
 
 
 if __name__ == "__main__":
     solution = Solution()
-    treeList = [3,1,4,None,2]
+    treeList = [3, 1, 4, None, 2]
     k = 1
     root = TreeNode.buildTree(treeList)
     solution.kthLargest(root, k)

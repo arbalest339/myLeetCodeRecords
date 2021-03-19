@@ -5,6 +5,7 @@ class TreeNode:
         self.left = None
         self.right = None
 
+
 class Solution:     # 方法二
     def buildTree(self, preorder, inorder) -> TreeNode:
         if not preorder:

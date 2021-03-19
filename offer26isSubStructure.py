@@ -62,7 +62,7 @@ class Solution:
                 treeStack.append(root.right)
             if root.left:
                 treeStack.append(root.left)
-        
+
         return False
 
 

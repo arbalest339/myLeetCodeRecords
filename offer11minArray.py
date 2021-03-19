@@ -19,11 +19,11 @@ class Solution:
             else:
                 headTailList.append([head, mid])
                 headTailList.append([mid, tail])
-        
+
         return valley
 
 
 if __name__ == "__main__":
-    numbers = [10,10,1,10,10]
+    numbers = [10, 10, 1, 10, 10]
     solution = Solution()
     print(solution.minArray(numbers))

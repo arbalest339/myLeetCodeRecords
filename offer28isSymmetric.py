@@ -27,6 +27,7 @@ class TreeNode:
 
         return root
 
+
 class Solution:
     def isSymmetric(self, root: TreeNode) -> bool:  # 中序遍历换皮
         if not root:
@@ -56,14 +57,14 @@ class Solution:
                 return False
             elif inorder[i].left and inorder[-i-1].right and inorder[i].left.val != inorder[-i-1].right.val:
                 return False
-        
+
         return True
-                
+
 
 if __name__ == "__main__":
     solution = Solution()
-    preorder = [1,2,3,4,2,4,3]
-    inorder = [3,2,4,1,4,2,3]
+    preorder = [1, 2, 3, 4, 2, 4, 3]
+    inorder = [3, 2, 4, 1, 4, 2, 3]
     root = TreeNode.buildTree(preorder, inorder)
     print(solution.isSymmetric(root))
 #      1

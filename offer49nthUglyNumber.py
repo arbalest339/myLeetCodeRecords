@@ -4,9 +4,12 @@ class Solution:
         for i in range(1, n):
             n2, n3, n5 = dp[a] * 2, dp[b] * 3, dp[c] * 5
             dp[i] = min(n2, n3, n5)     # 只需要找到*2 *3 *5之后最小的一个数就行
-            if dp[i] == n2: a += 1
-            if dp[i] == n3: b += 1
-            if dp[i] == n5: c += 1
+            if dp[i] == n2:
+                a += 1
+            if dp[i] == n3:
+                b += 1
+            if dp[i] == n5:
+                c += 1
         return dp[-1]
 
 

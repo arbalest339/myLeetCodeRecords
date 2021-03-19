@@ -17,5 +17,5 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    m, n, k = 100,100,9
-    print(solution.movingCount(m,n,k))
+    m, n, k = 100, 100, 9
+    print(solution.movingCount(m, n, k))

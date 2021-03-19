@@ -22,6 +22,6 @@ class Solution:
 
 if __name__ == "__main__":
     solution = Solution()
-    matrix = [[2,5,8],
-              [4,0,-1]]
+    matrix = [[2, 5, 8],
+              [4, 0, -1]]
     print(solution.spiralOrder(matrix))

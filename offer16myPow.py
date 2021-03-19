@@ -3,10 +3,10 @@ class Solution:
         def toBinary(n):
             binary = ""
             while n > 0:
-                binary += str(n%2)
+                binary += str(n % 2)
                 n = n // 2
             return binary
-        if n<0:
+        if n < 0:
             x = 1 / x
             n = -n
         bn = toBinary(n)
@@ -16,7 +16,7 @@ class Solution:
                 res = res * x
             x = x * x
         return res
-        
+
 
 if __name__ == "__main__":
     solution = Solution()

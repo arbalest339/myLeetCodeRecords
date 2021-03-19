@@ -4,6 +4,7 @@
 # 层层剥皮，保存剥下来的皮
 paths = []
 
+
 def leftFirst(S, path):     # 从左向右判断，取左侧为规约字符
     if len(S) == 0:
         paths.append(path)
@@ -14,7 +15,7 @@ def leftFirst(S, path):     # 从左向右判断，取左侧为规约字符
         return
 
     cur_c = S[0]
-    
+
     i = 1
     striped = cur_c
     for i in range(1, len(S)):
@@ -25,7 +26,7 @@ def leftFirst(S, path):     # 从左向右判断，取左侧为规约字符
         path.append([cur_c, path[-1][-1].replace("|", S)])
         paths.append(path)
         return
-    
+
     striped += "|"
     j = len(S)-1
     for j in range(len(S)-1, i, -1):
@@ -38,6 +39,7 @@ def leftFirst(S, path):     # 从左向右判断，取左侧为规约字符
     rightFirst(S[i:j+1], path.copy())
     return
 
+
 def rightFirst(S, path):    # 从右向左判断，取右侧为规约字符
     if len(S) == 0:
         paths.append(path)
@@ -49,7 +51,7 @@ def rightFirst(S, path):    # 从右向左判断，取右侧为规约字符
 
     cur_c = S[-1]
     striped = cur_c
-    
+
     j = len(S)-2
     for j in range(len(S)-2, -1, -1):
         if S[j] != cur_c:
@@ -71,6 +73,7 @@ def rightFirst(S, path):    # 从右向左判断，取右侧为规约字符
     rightFirst(S[i:j+1], path.copy())
     return
 
+
 if __name__ == "__main__":
     path = [["", "|"]]  # 规约字符，规约字串，竖线表示插入位置
     S = "BBCCCBAA"
@@ -82,7 +85,7 @@ if __name__ == "__main__":
     find = False
     for path in paths:
         for i, status in enumerate(path):
-            if P == status[-1].replace("|", "") and len(path)-1-i< min:
+            if P == status[-1].replace("|", "") and len(path)-1-i < min:
                 min = len(path)-1-i
                 find = True
     if find:

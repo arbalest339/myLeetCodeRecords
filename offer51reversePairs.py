@@ -29,9 +29,9 @@ class Solution:
         n = len(nums)
         tmp = [0] * n
         return self.mergeSort(nums, tmp, 0, n - 1)
-            
+
 
 if __name__ == "__main__":
     solution = Solution()
-    nums = [7,5,6,4]
+    nums = [7, 5, 6, 4]
     solution.reversePairs(nums)

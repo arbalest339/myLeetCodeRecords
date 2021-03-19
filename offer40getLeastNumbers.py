@@ -13,8 +13,9 @@ class Solution:
         ans = [-x for x in hp]
         return ans
 
+
 if __name__ == "__main__":
     solution = Solution()
-    arr = [0,1,2,1,3,4,5,6,4,3,2,0,1]
+    arr = [0, 1, 2, 1, 3, 4, 5, 6, 4, 3, 2, 0, 1]
     k = 5
-    solution.getLeastNumbers(arr,k)
+    solution.getLeastNumbers(arr, k)

@@ -1,4 +1,4 @@
-class Solution:# 动态规划，保存从i开始到j结束的部分是不是回文，之后判断i-1到j+1是否是回文
+class Solution:  # 动态规划，保存从i开始到j结束的部分是不是回文，之后判断i-1到j+1是否是回文
     def expand(self, s, left, right):
         while left >= 0 and right < len(s) and s[left] == s[right]:
             left -= 1
@@ -26,6 +26,28 @@ class Solution:# 动态规划，保存从i开始到j结束的部分是不是回�
                 start = i - cur_arm_len
                 end = i + cur_arm_len
         return s[start+1:end+1:2]
+
+    def newLongestPalindrome(self, s: str) -> str:
+        if len(s) < 2:
+            return s
+        res = s[0]
+        for i in range(2, len(s)):
+            if s[i-2] == s[i]:
+                h, t = i-2, i
+                while h >= 0 and t < len(s) and s[h] == s[t]:
+                    h -= 1
+                    t += 1
+                cur = s[h+1:t]
+                res = cur if len(cur) > len(res) else res
+        for i in range(1, len(s)):
+            if s[i-1] == s[i]:
+                h, t = i-1, i
+                while h >= 0 and t < len(s) and s[h] == s[t]:
+                    h -= 1
+                    t += 1
+                cur = s[h+1:t]
+                res = cur if len(cur) > len(res) else res
+        return res
 
 
 if __name__ == "__main__":

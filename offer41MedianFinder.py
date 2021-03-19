@@ -26,6 +26,7 @@ class MedianFinder:
         else:
             return (self.orderList[self.median] + self.orderList[self.median-1]) / 2
 
+
 if __name__ == "__main__":
     obj = MedianFinder()
     obj.addNum(-1)

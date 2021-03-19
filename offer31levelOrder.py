@@ -27,6 +27,7 @@ class TreeNode:
 
         return root
 
+
 class Solution:
     def levelOrder(self, root: TreeNode):
         import collections
@@ -42,18 +43,18 @@ class Solution:
                 queue.append(cur.left)
             if cur.right:
                 queue.append(cur.right)
-        
+
         return res
 
 
 if __name__ == "__main__":
     solution = Solution()
-    preorder = [0,2,1,5,1,4,3,6,-1,8]
-    inorder = [5,1,1,2,0,3,6,4,-1,8]
+    preorder = [0, 2, 1, 5, 1, 4, 3, 6, -1, 8]
+    inorder = [5, 1, 1, 2, 0, 3, 6, 4, -1, 8]
     root = TreeNode.buildTree(preorder, inorder)
     print(solution.levelOrder(root))
-      
+
 #       0
 #     2   4
 #   1    3 -1
-#  5 1    6  8 
+#  5 1    6  8

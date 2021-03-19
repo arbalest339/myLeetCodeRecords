@@ -13,7 +13,7 @@ class TreeNode:
         root = TreeNode(treeList[0])
         queue.append(root)
         i = 1
-        while i<len(treeList):
+        while i < len(treeList):
             cur = queue.popleft()
             if treeList[i]:
                 cur.left = TreeNode(treeList[i])
@@ -26,7 +26,6 @@ class TreeNode:
         return root
 
 
-
 class Solution:
     def maxDepth(self, root) -> int:
         if not root:
@@ -35,21 +34,20 @@ class Solution:
         res = []
         level = 0
         while stack[0] or stack[1]:
-            cur = stack[level%2].pop()
+            cur = stack[level % 2].pop()
             if cur.right:
-                stack[(level+1)%2].append(cur.right)
+                stack[(level+1) % 2].append(cur.right)
             if cur.left:
-                stack[(level+1)%2].append(cur.left)
-            
-            if not stack[level%2]:
-                level += 1
-        
-        return level
+                stack[(level+1) % 2].append(cur.left)
 
+            if not stack[level % 2]:
+                level += 1
+
+        return level
 
 
 if __name__ == "__main__":
     solution = Solution()
-    treeList = [3,9,20,None,None,15,7]
+    treeList = [3, 9, 20, None, None, 15, 7]
     root = TreeNode.buildTree(treeList)
     solution.maxDepth(root)

@@ -43,13 +43,13 @@ class Solution:
                 treeStack.append(cur_node.right)
             if cur_node.left:
                 treeStack.append(cur_node.left)
-        
+
         return root
 
 
 if __name__ == "__main__":
     solution = Solution()
-    preorder = [4,2,1,3,7,6,9]
-    inorder = [1,2,3,4,6,7,9]
+    preorder = [4, 2, 1, 3, 7, 6, 9]
+    inorder = [1, 2, 3, 4, 6, 7, 9]
     root = TreeNode.buildTree(preorder, inorder)
     solution.mirrorTree(root)

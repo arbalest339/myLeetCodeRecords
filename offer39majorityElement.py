@@ -1,8 +1,8 @@
 class Solution:
     def majorityElement(self, nums) -> int:
         nums.sort()
-        s=0 
-        e=0
+        s = 0
+        e = 0
         cur_num = nums[0]
         for i, num in enumerate(nums):
             if num != cur_num:
@@ -18,7 +18,8 @@ class Solution:
             return cur_num
         return nums
 
+
 if __name__ == "__main__":
     solution = Solution()
-    input = [1,2,3,2,2,2,5,4,2]
+    input = [1, 2, 3, 2, 2, 2, 5, 4, 2]
     solution.majorityElement(input)

@@ -11,11 +11,12 @@ class ListNode:
             cur = cur.next
         return head
 
+
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         if not head or not head.next:
             return head
-        
+
         last = head
         cur = head.next
         while cur:
@@ -28,8 +29,9 @@ class Solution:
 
         return last
 
+
 if __name__ == "__main__":
     solution = Solution()
-    listVal = [1,2,3,4,5]
-    head= ListNode.genList(listVal)
+    listVal = [1, 2, 3, 4, 5]
+    head = ListNode.genList(listVal)
     print(solution.reverseList(head))

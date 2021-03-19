@@ -21,8 +21,9 @@ class Solution:
                 max_multi = cur_max
             else:
                 break
-        
+
         return max_multi % 1000000007
+
 
 if __name__ == "__main__":
     solution = Solution()

@@ -6,10 +6,11 @@ class Solution:
                 bestVal.append(bestVal[-1]+nums[i])
             else:
                 bestVal.append(nums[i])
-        
+
         return max(bestVal)
+
 
 if __name__ == "__main__":
     solution = Solution()
-    nums = [-2,1,-3,4,-1,2,1,-5,4]
+    nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
     solution.maxSubArray(nums)
