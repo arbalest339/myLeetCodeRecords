@@ -27,11 +27,6 @@ class TreeNode:
 
     @staticmethod
     def buildTreeWithOrder(preorder, inorder):
-        """
-        :type preorder: List[int]
-        :type inorder: List[int]
-        :rtype: TreeNode
-        """
         if not preorder:
             return None
 
