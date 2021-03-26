@@ -47,3 +47,9 @@ class TreeNode:
         root.right = TreeNode.buildTree(right_preorder, right_inorder)
 
         return root
+
+
+if __name__ == "__main__":
+    n = input()
+    m = input()
+    nums = input()
