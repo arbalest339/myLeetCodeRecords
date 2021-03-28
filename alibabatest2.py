@@ -3,6 +3,9 @@ import sys
 # def main(path, favor):
 
 if __name__ == "__main__":
+    ls = [3,14,2,5]
+    ls.sort()
+    print(ls)
     # cards = [1,0,0,1]
     # main(cards)
     # t = int(next(sys.stdin))

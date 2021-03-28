@@ -15,11 +15,11 @@ class TreeNode:
         i = 1
         while i < len(treeList):
             cur = queue.popleft()
-            if treeList[i]:
+            if treeList[i] != None:
                 cur.left = TreeNode(treeList[i])
                 queue.append(cur.left)
             i += 1
-            if treeList[i]:
+            if i < len(treeList) and treeList[i]:
                 cur.right = TreeNode(treeList[i])
                 queue.append(cur.right)
             i += 1
