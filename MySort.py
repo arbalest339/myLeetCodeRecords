@@ -1,3 +1,5 @@
+import random
+
 class Solution:
     def randomized_partition(self, nums, l, r):
         pivot = random.randint(l, r)
