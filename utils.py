@@ -1,3 +1,20 @@
+class ListNode:
+    def __init__(self, val=0, next=None):
+        self.val = val
+        self.next = next
+    
+    @staticmethod
+    def build(lst):
+        if not lst:
+            return
+        res = ListNode(lst[0])
+        last = res
+        for i in range(1, len(lst)):
+            cur = ListNode(lst[i])
+            last.next = cur
+            last = cur
+        return res
+
 class TreeNode:
     def __init__(self, x):
         self.val = x
