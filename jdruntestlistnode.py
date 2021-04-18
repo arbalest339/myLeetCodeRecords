@@ -51,10 +51,11 @@ def commonLengthNoCircle(l1, l2):
             secondLap2 = True
         else:
             return 0
-    start = commonLengthNoCircle(l1, l2)
+    cur = commonLengthNoCircle(l1, l2)
     l = 1
-    while start.next:
+    while cur.next:
         l += 1
+        cur = cur.next
     return l
 
 
@@ -69,6 +70,7 @@ def commonLength(l1, l2):
         l = 1
         while cur.next is not o1:
             l += 1
+            cur = cur.next
         if o1 is o2:    # 进入环的位置不同，环周长即为共同长度
             o1.next = None
             l += commonLengthNoCircle(l1, l2)
@@ -85,5 +87,5 @@ if __name__ == "__main__":
         cur = cur.next
     cur.next = fifth
     l2 = ListNode.build([1,2])
-    l2.next.next = fifth.next
+    l2.next.next = l1.next.next.next
     print(commonLength(l1, l2))
