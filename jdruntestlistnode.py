@@ -27,11 +27,17 @@ def findCircleStart(head):
         if fast.next:
             fast = fast.next
         else:
-            break
+            return None
         if not fast.next:
             return None
         if fast is slow:
-            return fast
+            break
+    fast = head
+    slow = slow.next
+    while fast is not slow:
+        fast = fast.next
+        slow = slow.next
+    return slow
 
 def commonLengthNoCircle(l1, l2):
     cur1, cur2 = l1, l2
@@ -51,7 +57,7 @@ def commonLengthNoCircle(l1, l2):
             secondLap2 = True
         else:
             return 0
-    cur = commonLengthNoCircle(l1, l2)
+    cur = cur1
     l = 1
     while cur.next:
         l += 1
@@ -73,7 +79,7 @@ def commonLength(l1, l2):
             cur = cur.next
         if o1 is o2:    # 进入环的位置不同，环周长即为共同长度
             o1.next = None
-            l += commonLengthNoCircle(l1, l2)
+            l += commonLengthNoCircle(l1, l2) - 1
     return l
 
 
@@ -85,7 +91,8 @@ if __name__ == "__main__":
         if cur.val == 5:
             fifth = cur
         cur = cur.next
-    cur.next = fifth
+    cur.next = fifth    # 加环
     l2 = ListNode.build([1,2])
-    l2.next.next = l1.next.next.next
+    l2.next.next = fifth.next    # 链接在环之后
+    l2.next.next = l1.next.next.next    # 链接在环之前
     print(commonLength(l1, l2))
